@@ -1,7 +1,6 @@
 module.exports = [
   "strapi::errors",
   "strapi::security",
-  "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
@@ -9,4 +8,14 @@ module.exports = [
   'strapi::session',
   "strapi::favicon",
   "strapi::public",
+  {
+    name: "strapi::cors",
+    config: {
+      enabled: true,
+      origin: ["*"], // Specify your origin
+      methods: ["GET", "POST", "PUT", "DELETE"], // Allow required methods
+      headers: ["Content-Type", "Authorization"], // Include required headers
+    },
+  },
+
 ];
